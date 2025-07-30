@@ -28,3 +28,5 @@ app.get("/api/jobs/:id", getJobsById);
 app.post("/api/jobs", saveJobPosts);
 
 app.listen(PORT, () => console.log("Server is running on the PORT - ", PORT));
+
+module.exports = app;
