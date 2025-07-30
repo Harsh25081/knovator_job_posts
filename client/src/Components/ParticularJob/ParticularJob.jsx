@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import developerImg from "../../Assests/developer.jpeg";
 import styles from "./ParticularJob.module.css";
 
-const baseUrl = "http://localhost:8080/api";
+const baseUrl = "https://knovator-job-posts.vercel.app/api";
 
 export default function ParticularJob() {
   const [jobDetails, setJobDetails] = useState(null);

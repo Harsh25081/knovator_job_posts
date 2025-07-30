@@ -4,7 +4,7 @@ import developerImg from "../../Assests/developer.jpeg";
 import styles from "./Home.module.css";
 import { useNavigate } from "react-router-dom";
 
-const baseUrl = "http://localhost:8080/api";
+const baseUrl = "https://knovator-job-posts.vercel.app/api";
 
 export default function Home() {
   const [jobsList, setJobsList] = useState([]);

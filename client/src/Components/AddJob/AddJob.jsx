@@ -3,7 +3,7 @@ import styles from "./AddJob.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const baseUrl = "http://localhost:8080/api";
+const baseUrl = "https://knovator-job-posts.vercel.app/api";
 
 export default function AddJob() {
   const [jobDetails, setJobDetails] = useState({
