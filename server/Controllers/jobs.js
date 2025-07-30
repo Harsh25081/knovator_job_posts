@@ -1,4 +1,4 @@
-const jobModel = require("../Schemas/jobSchema");
+const jobModel = require("../jobSchema");
 
 const getAllJobs = async (req, res) => {
   try {

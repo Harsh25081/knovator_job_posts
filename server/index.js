@@ -1,33 +1,30 @@
-// api/index.js
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const serverless = require("serverless-http");
+const { getAllJobs, getJobsById, saveJobPosts } = require("./Controllers/jobs");
 
 require("dotenv").config();
-
-const {
-  getAllJobs,
-  getJobsById,
-  saveJobPosts,
-} = require("../Controllers/jobs");
-
 const app = express();
 
 app.use(cors());
+
 app.use(express.json());
 
 mongoose
   .connect(process.env.DB_URI, { useNewUrlParser: true })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.log("DB connection error", err));
+  .then((res) => console.log("Connected to MongoDB"))
+  .catch((err) => console.log("Got error while connecting to DB."));
+
+const PORT = process.env.PORT;
 
 app.get("/", (req, res) => {
-  res.send("API running...");
+  return res.send("This is the test API.....");
 });
 
 app.get("/api/jobs", getAllJobs);
+
 app.get("/api/jobs/:id", getJobsById);
+
 app.post("/api/jobs", saveJobPosts);
 
-module.exports.handler = serverless(app);
+app.listen(PORT, () => console.log("Server is running on the PORT - ", PORT));
